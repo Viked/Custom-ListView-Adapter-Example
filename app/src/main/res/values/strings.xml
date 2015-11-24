@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Custom ListView Adapter example</string>
+
+    <string name="selected_folder">Selected folder</string>
+    <string name="arrow_left">Return to upper folder</string>
+    <string name="arrow_right">Go to lower folder</string>
+    <string name="icon">File</string>
+    <string name="folders_count">"Folders: "</string>
+
 </resources>
