@@ -36,13 +36,11 @@ public class MainActivity extends AppCompatActivity {
         downIcon = ContextCompat.getDrawable(this, R.drawable.ic_arrow_right_black_24dp);
         upIconUn = ContextCompat.getDrawable(this, R.drawable.ic_arrow_left_grey600_24dp);
         downIconUn = ContextCompat.getDrawable(this, R.drawable.ic_arrow_right_grey600_24dp);
-
         fileNavigator = new FileNavigator();
         listView = (ListView) findViewById(R.id.file_list_view);
         txtSelectedFolder = (TextView) findViewById(R.id.txt_selected_folder);
         upButton = (ImageButton) findViewById(R.id.imageButtonUp);
         downButton = (ImageButton) findViewById(R.id.imageButtonDown);
-
         upButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

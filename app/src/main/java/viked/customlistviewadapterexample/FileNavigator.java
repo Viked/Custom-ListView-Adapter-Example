@@ -63,10 +63,13 @@ public class FileNavigator {
     }
 
     public boolean goToFolder(int position){
-        currentPath = files.get(position).getAbsolutePath();
-        updateFileList();
-        if (!currentPath.equals(pathTread) && !pathTread.contains(currentPath)) {
-            pathTread = currentPath;
+        File file = files.get(position);
+        if(file.isDirectory()) {
+            currentPath = files.get(position).getAbsolutePath();
+            updateFileList();
+            if (!currentPath.equals(pathTread) && !pathTread.contains(currentPath)) {
+                pathTread = currentPath;
+            }
             return true;
         }else{
             return false;

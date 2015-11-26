@@ -67,7 +67,8 @@ public class FileAdapter extends ArrayAdapter<File> {
                     getFoldersCount(file));
         }else{
             viewHolder.folderCountTextView.setVisibility(View.GONE);
-            switch (fileName.substring(fileName.lastIndexOf("."))){
+            int dotIndex = fileName.lastIndexOf(".");
+            switch (fileName.substring(dotIndex != -1 ? dotIndex:(fileName.length()-1))) {
                 case ".txt":
                     viewHolder.imgViewIcon.setImageDrawable(txtFileIcon48dp);
                     break;
