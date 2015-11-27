@@ -67,7 +67,7 @@ public class FileNavigator {
         if(file.isDirectory()) {
             currentPath = file.getAbsolutePath();
             updateFileList();
-            if (!currentPath.equals(pathTread) && !pathTread.contains(currentPath)) {
+            if (!pathTread.contains(currentPath)) {
                 pathTread = currentPath;
             }
             return true;
