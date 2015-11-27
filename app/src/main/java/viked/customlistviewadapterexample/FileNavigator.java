@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class FileNavigator {
-    private List<File> files = new ArrayList<File>();
+    private List<File> files = new ArrayList<>();
     private String currentPath;
     private String pathTread;
     private String rootPath;
@@ -42,7 +42,7 @@ public class FileNavigator {
     }
 
     public boolean isFolderOpen(File folder){
-        return pathTread.equals(folder.getAbsolutePath());
+        return pathTread.contains(folder.getAbsolutePath());
     }
 
     public boolean isNavigateUp(){
@@ -65,7 +65,7 @@ public class FileNavigator {
     public boolean goToFolder(int position){
         File file = files.get(position);
         if(file.isDirectory()) {
-            currentPath = files.get(position).getAbsolutePath();
+            currentPath = file.getAbsolutePath();
             updateFileList();
             if (!currentPath.equals(pathTread) && !pathTread.contains(currentPath)) {
                 pathTread = currentPath;
@@ -88,7 +88,7 @@ public class FileNavigator {
 
     public static List<File> getFileList(File file){
         File[] filesArray = file.listFiles();
-        List<File> files = new ArrayList<File>();
+        List<File> files = new ArrayList<>();
         if(filesArray != null && filesArray.length>0)
         {
             files = Arrays.asList(filesArray);
